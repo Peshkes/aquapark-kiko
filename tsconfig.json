@@ -21,11 +21,11 @@
     "jsx": "react-jsx",
     "baseUrl": "src/",
     "paths": {
-      "@modules/*": ["modules/*"],
-      "@assets/*": ["assets/*"],
-      "@core/*": ["core/*"],
-      "@services/*": ["services/*"],
-      "@shared/*": ["shared/*"],
+      "modules/*": ["modules/*"],
+      "assets/*": ["assets/*"],
+      "core/*": ["core/*"],
+      "services/*": ["services/*"],
+      "shared/*": ["shared/*"],
     },
     "plugins": [{ "name": "typescript-plugin-css-modules" }]
   },
