@@ -26,6 +26,7 @@
       "core/*": ["core/*"],
       "services/*": ["services/*"],
       "shared/*": ["shared/*"],
+      "features/*": ["features/*"]
     },
     "plugins": [{ "name": "typescript-plugin-css-modules" }]
   },
