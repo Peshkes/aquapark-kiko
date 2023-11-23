@@ -1,22 +1,19 @@
 import React from 'react';
 import style from './MainParallaxPicture.module.css';
-// @ts-ignore
-import baseImage from 'assets/test-img/layer-base.png';
-// @ts-ignore
-import middleImage from 'assets/test-img/layer-middle.png';
-// @ts-ignore
-import frontImage from 'assets/test-img/layer-front.png';
 
 const MainParallaxPicture = () => {
     return (
         <div className={style.mainParallaxPicture}>
             <div className={style.layers}>
-                <div className={style.header}>
-                    <h1 className={style.title}>АКВАПАРК КИКО</h1>
+                <div className={style.title}>
+                    <div className={style.text}><span className={style.lineFirst}>Аквапарк</span><br/><span className={style.lineSecond}>Кико</span></div>
                 </div>
-                <div className={style.layer + ' ' + style.base} style={{backgroundImage: `URL(${baseImage})`}}></div>
-                <div className={style.layer + ' ' + style.middle} style={{backgroundImage: `URL(${middleImage})`}}></div>
-                <div className={style.layer + ' ' + style.front} style={{backgroundImage: `URL(${frontImage})`}}></div>
+                <div className={`${style.layer} ${style.layer7}`}></div>
+                <div className={`${style.layer} ${style.layer6}`}></div>
+                <div className={`${style.layer} ${style.layer5}`}></div>
+                <div className={`${style.layer} ${style.layer4}`}></div>
+                <div className={`${style.layer} ${style.layer3}`}></div>
+                <div className={`${style.layer} ${style.layer2}`}></div>
             </div>
         </div>
     );

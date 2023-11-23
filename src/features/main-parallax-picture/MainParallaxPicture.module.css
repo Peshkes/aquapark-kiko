@@ -1,20 +1,24 @@
-.mainParallaxPicture {
+.mainParallaxPicture{
+    display: block;
     position: relative;
+    will-change: transform;
 }
-.mainParallaxPicture::after {
+.mainParallaxPicture::after{
     content: '';
     position: absolute;
     z-index: 100;
     width: 100%;
-    height: calc(var(--index) * 10);
-    background-image: url(assets/test-img/ground.png);
+    height: calc(var(--index) * 15);
+    background-image: url(assets/parallax/1.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     bottom: calc(var(--index) * -4.5);
+    will-change: transform;
 }
+
 .layers {
-    height: 100vh;
+    height: 100svh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -32,29 +36,71 @@
     z-index: 2;
     transition: var(--transition);
 }
-.base {
-    transform: translate3d(0, calc(var(--scrollTop) / 1.6), 0);
+.layer7 {
+    transform: translate3d(0, calc(var(--scrollTop) * 0.6), 0);
+    background-image: url(assets/parallax/7.webp);
     z-index: 0;
 }
-.middle {
-    transform: translate3d(0, calc(var(--scrollTop) / 2.5), 0);
+.layer6 {
+    transform: translate3d(0, calc(var(--scrollTop) * 0.5 ), 0);
+    background-image: url(assets/parallax/6.webp);
 }
-.front {
-    transform: translate3d(0, calc(var(--scrollTop) / 5.7), 0);
+.layer5 {
+    transform: translate3d(0, calc(var(--scrollTop) * 0.4), 0);
+    background-image: url(assets/parallax/5.webp);
 }
-.header {
-    z-index: 1;
-    transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
-    transition: var(--transition);
-    will-change: transform;
-    text-transform: uppercase;
-    font-weight: 900;
-    color: var(--text);
-    text-shadow: 0 0 15px #9d822b;
-    display: flex;
-    justify-content: center;
+.layer4 {
+    transform: translate3d(0, calc(var(--scrollTop) * 0.3), 0);
+    background-image: url(assets/parallax/4.webp);
+}
+.layer3 {
+    transform: translate3d(0, calc(var(--scrollTop) * 0.2), 0);
+    background-image: url(assets/parallax/3.webp);
+}
+.layer2 {
+    transform: translate3d(0, calc(var(--scrollTop) * 0.1), 0);
+    background-image: url(assets/parallax/2.webp);
 }
 .title {
+    z-index: 1;
+    transform: translate3d(0, calc(var(--scrollTop) * 0.8), 0);
+    transition: var(--transition);
+    will-change: transform;
+}
+.text {
+    font-family: Karlson, sans-serif;
+    letter-spacing: calc(var(--index) / 20);
+    line-height: calc(var(--index) * 2.8);
+    margin-top: calc(var(--index) * -12);
+    color: #006ACE;
+    text-transform: uppercase;
+}
+.lineFirst{
     font-size: calc(var(--index) * 2.65);
-    letter-spacing: calc(var(--index) / 2.25);
+}
+.lineSecond{
+    font-size: calc(var(--index) * 5.4);
+}
+@media screen and (max-width: 769px) {
+    .mainParallaxPicture::after{
+        background-size: contain;
+        bottom: calc(var(--index) * -7);
+    }
+    .layer {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: bottom;
+    }
+    .title{
+        transform: translate3d(0, calc(var(--scrollTop) * 0.6), 0);
+    }
+    .text {
+        line-height: calc(var(--index) * 4);
+    }
+    .lineFirst{
+        font-size: calc(var(--index) * 4);
+    }
+    .lineSecond{
+        font-size: calc(var(--index) * 8);
+    }
 }
