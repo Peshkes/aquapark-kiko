@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'Karlson';
+    font-style: normal;
+    src: url("karlson_25893.woff2"),
+    url("karlson_25893.ttf") format("truetype"),
+    url("karlson_25893.otf") format("opentype"),
+    url("karlson_25893.woff") format("woff");
+}
