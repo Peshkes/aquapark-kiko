@@ -10,4 +10,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+@font-face {
+  font-family: 'Karlson';
+  font-style: normal;
+  src: url("./assets/fonts/karlson_25893.svg") format("svg"),
+  url("./assets/fonts/karlson_25893.woff2") format("woff2"),
+  url("./assets/fonts/karlson_25893.ttf") format("truetype"),
+  url("./assets/fonts/karlson_25893.otf") format("opentype"),
+  url("./assets/fonts/karlson_25893.woff") format("woff");
+}
 
