@@ -1,0 +1,56 @@
+.photoBlock {
+    padding-top: calc(var(--index) * 6);
+    background-color: gray;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    width: 100%;
+}
+
+.cell {
+    margin: 10%;
+    aspect-ratio: 1;
+    border-color: white;
+}
+
+.cell:nth-child(1),
+.cell:nth-child(3) {
+    grid-row: span 2;
+    aspect-ratio: 1/2;
+}
+
+.cell:nth-child(1){
+    margin-left: -30%;
+    margin-right: 25%;
+}
+
+.cell:nth-child(2){
+    margin-top: 25%;
+    margin-left: 22%;
+}
+
+.cell:nth-child(3){
+    margin-top: 60%;
+}
+
+.cell:nth-child(4){
+    margin-top: -25%;
+    margin-right: 25%;
+}
+
+.cell:nth-child(5){
+    margin-left: -45%;
+    margin-right: 45%;
+}
+
+.cell:nth-child(6){
+}
+
+.cell img{
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 200px;
+}
