@@ -1,3 +1,7 @@
-.mainPage{
+.mainPage {
 
+}
+
+.underWaterBlock {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 97, 133, 1) 100%);
 }

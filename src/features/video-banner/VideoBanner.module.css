@@ -1,0 +1,16 @@
+.videoBanner {
+    padding: calc(var(--index) * 6) 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.animatedWhale {
+    padding: calc(var(--index) * 3) calc(var(--index) * 7);
+    background-color: gray;
+}
+
+.video {
+    width: calc(var(--index) * 25);
+    height: calc(var(--index) * 16);
+}

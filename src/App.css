@@ -1,4 +1,25 @@
 :root {
     --index: calc(1vw + 1vh);
     --transition: transform .75s cubic-bezier(.075, .5, 0, 1);
+    color: white;
+}
+
+h2 {
+    font-size: calc(var(--index) * 3.5);
+    font-family: -apple-system, serif;
+    line-height: calc(var(--index) * 4);
+    position: absolute;
+    left: 5%;
+}
+
+h4{
+    font-size: calc(var(--index) * 1.2);
+}
+
+p{
+    font-size: calc(var(--index) * 0.8);
+}
+
+.wrapper{
+    padding: 0 5%;
 }

@@ -1,5 +1,33 @@
-.descriptionOfAquapark{
-    display: block;
-    height: 100vh;
-    background: black;
+.descriptionOfAquapark {
+    position: relative;
+    padding-top: calc(var(--index) * 5);
+    align-items: end;
+}
+
+.descriptionOfAquapark > div{
+    display: flex;
+    justify-content: right;
+}
+
+.textBlock {
+    padding: calc(var(--index));
+    padding-top: calc(var(--index) * 9);
+    min-width: 70%;
+    width: calc(var(--index) * 35);
+    background-color: gray;
+}
+
+.container {
+    display: flex;
+    padding-bottom: calc(var(--index));
+}
+
+.leftTextBlock {
+    padding-right: 5%;
+    width: 30%;
+    min-width: min-content;
+}
+
+.rightTextBlock {
+    width: 70%;
 }
