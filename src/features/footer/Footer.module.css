@@ -1,0 +1,31 @@
+.footer{
+    margin-top: calc(var(--index) * 7);
+    display: flex;
+    justify-content: center;
+    padding-top: calc(var(--index) * 3);
+    padding-bottom: calc(var(--index) * 9);
+    background-color: gray;
+}
+
+.informationBlock{
+    width: 50%;
+    min-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.informationBlock div a{
+    text-decoration: none;
+    color: white;
+    padding: 0 calc(var(--index) * 1);
+}
+
+.links{
+    margin-bottom: calc(var(--index) * 1);
+}
+
+.social a svg{
+    width: calc(var(--index) * 2);
+    aspect-ratio: 1;
+}

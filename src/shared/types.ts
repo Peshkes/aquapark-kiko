@@ -17,3 +17,8 @@ export type StateOfCart = {
     preliminaryPrice: number
     totalPrice: number
 }
+
+export type Question = {
+    question: string
+    answer: string
+}

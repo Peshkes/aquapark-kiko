@@ -1,0 +1,44 @@
+.prices {
+    margin-top:  calc(var(--index) * 5);
+    padding-bottom: calc(var(--index) * 12);
+    background-color: gray;
+}
+
+.prices > div {
+    display: flex;
+}
+
+.prices div div a, .prices p{
+    display: block;
+    text-decoration: none;
+    font-size: calc(var(--index) * 1.5);
+    font-weight: bold;
+    color: white;
+    margin-top: calc(var(--index) * 5);
+}
+
+.prices p{
+    text-align: center;
+    position: relative;
+    left: -23%;
+}
+
+.prices a{
+    position: relative;
+    left: 30%;
+    text-align: left;
+}
+
+.prices h2{
+    left: 0;
+}
+
+.leftSide {
+    position: relative;
+    width: 60%;
+}
+
+.rightSide {
+    position: relative;
+    width: 40%;
+}

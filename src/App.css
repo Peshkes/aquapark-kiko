@@ -16,10 +16,11 @@ h4{
     font-size: calc(var(--index) * 1.2);
 }
 
-p{
+p, a{
     font-size: calc(var(--index) * 0.8);
 }
 
 .wrapper{
     padding: 0 5%;
+    position: relative;
 }

@@ -3,19 +3,19 @@ import style from './Photos.module.css';
 // @ts-ignore
 import testImage from 'assets/photo-gallery/test-photo.webp';
 
-const Photos = () => {
-    const images = [
-        {image: testImage, title: "test"},
-        {image: testImage, title: "test"},
-        {image: testImage, title: "test"},
-        {image: testImage, title: "test"},
-        {image: testImage, title: "test"},
-        {image: testImage, title: "test"},
-    ];
+const images = [
+    {image: testImage, title: "test"},
+    {image: testImage, title: "test"},
+    {image: testImage, title: "test"},
+    {image: testImage, title: "test"},
+    {image: testImage, title: "test"},
+    {image: testImage, title: "test"},
+];
 
+const Photos = () => {
     return (
         <div className={'wrapper'}>
-            <h2>Фотографии</h2>
+            <h2 id={"photos"}>Фотографии</h2>
             <div className={style.photoBlock}>
                 <div className={style.gallery}>
                     {images.map(item => (

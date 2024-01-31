@@ -1,0 +1,18 @@
+.faq{
+
+}
+
+.header{
+    position: relative;
+    padding: calc(var(--index) * 2);
+    padding-left: 3%;
+    background-color: gray;
+    margin-left: -3%;
+    width: min-content;
+}
+
+.header h2{
+    position: relative;
+    left: 0;
+}
+

@@ -1,0 +1,20 @@
+.block{
+    padding-left: 16%;
+    cursor: pointer;
+}
+
+.block.open .answer {
+    max-height: 100px; /* Adjust as needed */
+    transition: max-height 1s ease-in-out;
+}
+
+.question{
+    padding: 2%;
+}
+
+.answer{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s ease-out;
+    padding-left: 2%;
+}
