@@ -8,6 +8,7 @@ import Prices from "features/prices/Prices";
 import Faq from "features/faq/Faq";
 import Contacts from "features/contacts/Contacts";
 import Footer from "features/footer/Footer";
+import TelegramForm from "features/telegram-form/TelegramForm";
 
 const MainPage = () => {
     return (
@@ -19,6 +20,7 @@ const MainPage = () => {
                 <Photos/>
                 <Prices/>
                 <Faq/>
+                <TelegramForm/>
                 <Contacts/>
                 <Footer/>
             </div>

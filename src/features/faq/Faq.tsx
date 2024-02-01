@@ -33,7 +33,7 @@ const Faq = () => {
                 </div>
                 <div>
                     {questions.map((item, index) =>
-                        (<QuestionBlock question={item.question} answer={item.answer}
+                        (<QuestionBlock question={item.question} answer={item.answer} key={"questionBlock_" + index}
                                         isOpen={index === openIndex}  onToggle={() => toggleAnswer(index)}/>))}
                 </div>
             </div>

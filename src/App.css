@@ -12,11 +12,22 @@ h2 {
     left: 5%;
 }
 
-h4{
+h4, input, textarea{
+    font-size: calc(var(--index) * 1.2);
+    color: white;
+    background-color: rgba(255,255,255,0);
+    border: none;
+}
+
+input::placeholder, textarea::placeholder{
+    color: white;
+}
+
+button{
     font-size: calc(var(--index) * 1.2);
 }
 
-p, a{
+p, a, label{
     font-size: calc(var(--index) * 0.8);
 }
 
