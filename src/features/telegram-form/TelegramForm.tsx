@@ -12,8 +12,8 @@ const TelegramForm = () => {
     const handleSendMessage = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (isValidPhone){
-            const botToken = '6827363184:AAEaJGWZyLS-3iCnHVUCsnmxZnW1xckrofQ';
-            const chatId = '5811760757';
+            const botToken = '';
+            const chatId = '';
             try {
                 await fetch(
                     `https://api.telegram.org/bot${botToken}/sendMessage`,
