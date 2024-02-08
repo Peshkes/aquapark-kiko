@@ -12,26 +12,35 @@ h2 {
     left: 5%;
 }
 
-h4, input, textarea{
+h4, input, textarea {
     font-size: calc(var(--index) * 1.2);
     color: white;
-    background-color: rgba(255,255,255,0);
+    background-color: rgba(255, 255, 255, 0);
     border: none;
 }
 
-input::placeholder, textarea::placeholder{
+input::placeholder, textarea::placeholder {
     color: white;
 }
 
-button{
-    font-size: calc(var(--index) * 1.2);
+button {
+    font-size: calc(var(--index) * 0.8);
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid white;
+    padding: calc(var(--index) * 0.3) calc(var(--index) * 1);
+    border-radius: 100px;
+    color: white;
 }
 
-p, a, label{
+a {
+    cursor: pointer;
+}
+
+p, a, label {
     font-size: calc(var(--index) * 0.8);
 }
 
-.wrapper{
+.wrapper {
     padding: 0 5%;
     position: relative;
 }

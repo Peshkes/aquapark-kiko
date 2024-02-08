@@ -3,7 +3,6 @@ export type Ticket = {
     name: string
     price: number
     time: number
-    type: string
 }
 
 export type CartItem = {
@@ -22,3 +21,16 @@ export type Question = {
     question: string
     answer: string
 }
+
+export type MyDocument = {
+    title: string
+    link: string
+}
+
+export type TicketsTypeData = {
+    type: string
+    description: string
+    tickets: Array<Ticket>
+}
+
+export type TicketsSortedByTypeData = Array<TicketsTypeData>

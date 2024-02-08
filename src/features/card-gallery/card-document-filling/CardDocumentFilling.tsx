@@ -1,12 +1,8 @@
 import React from 'react';
 import style from './CardDocumentFilling.module.css';
+import {MyDocument} from "shared/types";
 
-type Props = {
-    title: string
-    link: string
-}
-
-const CardDocumentFilling = ({title, link}: Props) => {
+const CardDocumentFilling = ({title, link}: MyDocument) => {
     return (
         <a className={style.anchor} href={link} target={"_blank"} rel="noreferrer">{title}</a>
     );

@@ -1,11 +1,20 @@
 .cardWrapper{
-
+    width: 100%;
+    overflow: hidden;
+    background-color: #006ACE;
+    border-radius: 10%;
 }
 
-.head{
-
+.head img{
+    width: 100%;
 }
 
 .body{
+    padding: 0 10% 10%;
+    word-wrap: anywhere;
+}
 
+.body a{
+    color: white;
+    text-decoration: none;
 }

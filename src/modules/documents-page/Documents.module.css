@@ -1,0 +1,4 @@
+.documentsPage{
+    background-color: black;
+    padding-top:  calc(var(--index) * 2);
+}

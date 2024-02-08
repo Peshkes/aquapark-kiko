@@ -23,7 +23,7 @@ const cartSlice = createSlice({
         addToCart(state, action) {
             const tmpState: StateOfCart = {...state};
             const foundIndex = tmpState.cart.findIndex((item: CartItem) => action.payload.ticket.id === item.ticket.id);
-            foundIndex === -1 ? tmpState.cart.push(action.payload) : tmpState.cart[foundIndex].count += action.payload.count;
+            foundIndex === -1 ? tmpState.cart.push(action.payload.ticket) : tmpState.cart[foundIndex].count += action.payload.count;
             const howMuchChange = action.payload.count * action.payload.ticket.price;
             return recalculatePricesWith(tmpState, howMuchChange);
         },

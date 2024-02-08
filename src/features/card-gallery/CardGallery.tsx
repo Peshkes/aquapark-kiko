@@ -1,9 +1,13 @@
-import React from 'react';
+import React, {ReactNode} from 'react';
+import style from './CardGallery.module.css'
 
-const CardGallery = () => {
+type Props = {
+    children: ReactNode
+}
+const CardGallery = ({children}: Props) => {
     return (
-        <div>
-
+        <div className={style.gallery}>
+            {children}
         </div>
     );
 };
