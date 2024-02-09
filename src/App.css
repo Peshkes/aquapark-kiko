@@ -44,3 +44,13 @@ p, a, label {
     padding: 0 5%;
     position: relative;
 }
+
+@media screen and (max-width: 768px) {
+    p, a, label {
+        font-size: calc(var(--index) * 1.2);
+    }
+
+    button {
+        font-size: calc(var(--index) * 1.2);
+    }
+}

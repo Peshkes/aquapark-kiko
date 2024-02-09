@@ -29,3 +29,9 @@
     width: calc(var(--index) * 2);
     aspect-ratio: 1;
 }
+@media screen and (max-width: 768px) {
+    .informationBlock{
+        width: 80%;
+        min-width: auto;
+    }
+}

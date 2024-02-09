@@ -2,7 +2,7 @@
     width: 100%;
     overflow: hidden;
     background-color: #006ACE;
-    border-radius: 10%;
+    border-radius: 50px;
 }
 
 .head img{
@@ -10,7 +10,7 @@
 }
 
 .body{
-    padding: 0 10% 10%;
+    padding: 0 40px 40px;
     word-wrap: anywhere;
 }
 
