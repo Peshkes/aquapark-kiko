@@ -15,4 +15,8 @@
     position: relative;
     left: 0;
 }
-
+@media screen and (max-width: 768px) {
+    .faq{
+        margin-top: calc(var(--index) * 3);
+    }
+}

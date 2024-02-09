@@ -4,15 +4,20 @@
     color: white;
 }
 
+h1{
+    font-family: Karlson, serif;
+}
+
 h2 {
-    font-size: calc(var(--index) * 3.5);
     font-family: -apple-system, serif;
+    font-size: calc(var(--index) * 3.5);
     line-height: calc(var(--index) * 4);
     position: absolute;
     left: 5%;
 }
 
 h4, input, textarea {
+    font-family: -apple-system, serif;
     font-size: calc(var(--index) * 1.2);
     color: white;
     background-color: rgba(255, 255, 255, 0);
@@ -20,10 +25,12 @@ h4, input, textarea {
 }
 
 input::placeholder, textarea::placeholder {
+    font-family: -apple-system, serif;
     color: white;
 }
 
 button {
+    font-family: -apple-system, serif;
     font-size: calc(var(--index) * 0.8);
     background-color: rgba(255, 255, 255, 0);
     border: 1px solid white;
@@ -37,6 +44,7 @@ a {
 }
 
 p, a, label {
+    font-family: -apple-system, serif;
     font-size: calc(var(--index) * 0.8);
 }
 
@@ -52,5 +60,9 @@ p, a, label {
 
     button {
         font-size: calc(var(--index) * 1.2);
+    }
+
+    h4, input, textarea {
+        font-size: calc(var(--index) * 1.4);
     }
 }

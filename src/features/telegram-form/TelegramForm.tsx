@@ -78,7 +78,7 @@ const TelegramForm = () => {
                                 required={true}
                                 value={message}
                                 placeholder={"Как заставить бутер падать колбасой в рот, а не вниз?"}
-                                rows={2} // Вы можете установить желаемое количество строк
+                                rows={3} // Вы можете установить желаемое количество строк
                                 style={{ resize: 'none' }}
                                 onChange={(e) => setMessage(e.target.value)}
                             />

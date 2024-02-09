@@ -69,7 +69,7 @@
 }
 .text h1{
     text-align: center;
-    font-family: Karlson, sans-serif;
+    font-family: Karlson, sans-serif !important;
     letter-spacing: calc(var(--index) / 20);
     line-height: calc(var(--index) * 3);
     margin-top: calc(var(--index) * -12);

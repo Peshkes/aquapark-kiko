@@ -4,7 +4,7 @@
 }
 
 .block.open .answer {
-    max-height: 100px; /* Adjust as needed */
+    max-height: 150px;
     transition: max-height 1s ease-in-out;
 }
 
@@ -17,4 +17,15 @@
     overflow: hidden;
     transition: max-height 1s ease-out;
     padding-left: 2%;
+}
+@media screen and (max-width: 768px) {
+    .block{
+        padding-left: calc(var(--index) * 2);
+    }
+    .question{
+        padding: 3% 0;
+    }
+    .answer{
+        padding: 0 calc(var(--index) * 2);
+    }
 }

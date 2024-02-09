@@ -1,10 +1,13 @@
 .footer{
-    margin-top: calc(var(--index) * 7);
+    margin-top: calc(var(--index) * 3);
     display: flex;
     justify-content: center;
-    padding-top: calc(var(--index) * 3);
+    padding-top: calc(var(--index) * 10);
     padding-bottom: calc(var(--index) * 9);
-    background-color: gray;
+    background-image: url("assets/footer/footer.webp");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: bottom;
 }
 
 .informationBlock{
