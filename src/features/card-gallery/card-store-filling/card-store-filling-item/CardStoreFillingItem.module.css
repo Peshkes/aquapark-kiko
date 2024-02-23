@@ -1,3 +1,43 @@
-.item{
+.item {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: calc(var(--index) * 0.5) 0;
+}
+
+.counter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 35%;
+    min-width: min-content;
+}
+
+.counter button {
+    width: calc(var(--index) * 1.5);
+    height: calc(var(--index) * 1.5);
+    padding: 0 calc(var(--index) * 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.counter p {
+    width: 100%;
+    text-align: center;
+}
+
+.hours {
+    width: 25%;
+}
+
+@media screen and (max-width: 768px) {
+    .counter {
+        width: 35%;
+    }
+    .counter button {
+        width: calc(var(--index) * 3.5);
+        height: calc(var(--index) * 3.5);
+        padding: 0 calc(var(--index) * 1.5);
+    }
 }

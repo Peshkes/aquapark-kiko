@@ -13,28 +13,37 @@ const CardStoreFillingItem = ({ticket}: Props) => {
     const hours = ticket.time / 60;
 
     function handleIncrement() {
-        if (count === 0)
-            dispatch(addToCart({ticket: ticket, count: 1}));
-        else
-            dispatch(changeCountOfItemTo({ticket: ticket, count: count + 1}));
-        setCount(count + 1);
+        setCount(prevCount => {
+            const newCount = prevCount + 1;
+            if (prevCount === 0) {
+                dispatch(addToCart({ ticket: ticket, count: 1 }));
+            } else {
+                dispatch(changeCountOfItemTo({ ticket: ticket, count: newCount }));
+            }
+            return newCount;
+        });
     }
 
     function handleDecrement() {
-        if (count > 0) {
-            if (count === 1)
-                dispatch(removeFromCart({ticket: ticket}))
-            else
-                dispatch(changeCountOfItemTo({ticket: ticket, count: count - 1}));
-            setCount(count - 1);
-        }
+        setCount(prevCount => {
+            if (prevCount > 0) {
+                const newCount = prevCount - 1;
+                if (newCount === 0) {
+                    dispatch(removeFromCart({ ticket: ticket }));
+                } else {
+                    dispatch(changeCountOfItemTo({ ticket: ticket, count: newCount }));
+                }
+                return newCount;
+            }
+            return prevCount;
+        });
     }
 
     return (
         <div className={style.item}>
-            <p>{hours === 1 ? hours + " час" : hours >= 7 ? "День" : hours + " часов"}</p>
+            <p className={style.hours}>{hours === 1 ? hours + " час" : hours >= 7 ? "День" : hours + " часов"}</p>
             <p>{ticket.price + "р."}</p>
-            <div>
+            <div className={style.counter}>
                 <button onClick={handleDecrement}>-</button>
                 <p>{count}</p>
                 <button onClick={handleIncrement}>+</button>

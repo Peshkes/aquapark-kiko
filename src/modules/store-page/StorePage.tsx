@@ -12,7 +12,8 @@ import CardStoreFilling from "features/card-gallery/card-store-filling/CardStore
 const StorePage = () => {
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
-    const {data, status} = useAppSelector(state => state.ticketsReducer)
+    const {data, status} = useAppSelector(state => state.ticketsReducer);
+    const {preliminaryPrice, totalPrice, sale} = useAppSelector(state => state.cartReducer);
 
     const headers = CardHeaderGenerator.getHeaders(data.length);
 
@@ -30,7 +31,8 @@ const StorePage = () => {
                         <>
                             {data.map((item, index) => (
                                 <CardWrapper headerImage={headers[index]}>
-                                    <CardStoreFilling type={item.type} description={item.description} tickets={item.tickets} />
+                                    <CardStoreFilling type={item.type} description={item.description}
+                                                      tickets={item.tickets}/>
                                 </CardWrapper>
                             ))}
                         </>
@@ -38,6 +40,18 @@ const StorePage = () => {
                     :
                     <p>{status}</p>
                 }
+                <div className={style.calculateBlock}>
+                    {sale === 0 &&  <div className={style.left}>
+                        <input type="text" placeholder={"Введите купон"}/>
+                        <button>Применить</button>
+                    </div>}
+                    <div className={style.right + " " + (sale !== 0 ? style.onlyOne : null)}>
+                        {sale !== 0 && <input type="text" value={preliminaryPrice + "р."} className={style.preliminaryPrice} readOnly/>}
+                        {sale !== 0 &&<input type="text" value={"-" + sale + "%"}  className={style.sale} readOnly/>}
+                        <input type="text" value={totalPrice + "р."}  className={style.totalPrice} readOnly/>
+                        <button>Купить</button>
+                    </div>
+                </div>
             </div>
             <Footer/>
         </div>
