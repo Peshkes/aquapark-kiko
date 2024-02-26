@@ -2,6 +2,7 @@
     display: block;
     position: relative;
     will-change: transform;
+    background-color: white;
 }
 .mainParallaxPicture::after{
     content: '';

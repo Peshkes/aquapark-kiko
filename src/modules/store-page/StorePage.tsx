@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import style from './StorePage.module.css';
 import {useNavigate} from "react-router-dom";
 import CardGallery from "features/card-gallery/CardGallery";
@@ -8,12 +8,14 @@ import {useAppDispatch, useAppSelector} from "core/redux/redux-hooks";
 import {getTicketsAsyncAction} from "core/redux/async-actions/getTickets";
 import {CardHeaderGenerator} from "services/CardHeaderGenerator";
 import CardStoreFilling from "features/card-gallery/card-store-filling/CardStoreFilling";
+import {getSaleAsyncAction} from "core/redux/async-actions/getSale";
 
 const StorePage = () => {
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
     const {data, status} = useAppSelector(state => state.ticketsReducer);
     const {preliminaryPrice, totalPrice, sale} = useAppSelector(state => state.cartReducer);
+    const [couponCode, setCouponCode] = useState<string>("");
 
     const headers = CardHeaderGenerator.getHeaders(data.length);
 
@@ -25,7 +27,7 @@ const StorePage = () => {
     return (
         <div className={style.storePage}>
             <div className="wrapper">
-                <button onClick={() => navigate('/')}>← Всплыть на главную</button>
+                <button className={style.backButton} onClick={() => navigate('/')}>← Всплыть на главную</button>
                 {data.length !== 0 ?
                     <CardGallery>
                         <>
@@ -42,8 +44,8 @@ const StorePage = () => {
                 }
                 <div className={style.calculateBlock}>
                     {sale === 0 &&  <div className={style.left}>
-                        <input type="text" placeholder={"Введите купон"}/>
-                        <button>Применить</button>
+                        <input type="text" placeholder={"Введите купон"} onChange={(event) => setCouponCode(event.target.value)}/>
+                        <button onClick={()=>dispatch(getSaleAsyncAction(couponCode))}>Применить</button>
                     </div>}
                     <div className={style.right + " " + (sale !== 0 ? style.onlyOne : null)}>
                         {sale !== 0 && <input type="text" value={preliminaryPrice + "р."} className={style.preliminaryPrice} readOnly/>}

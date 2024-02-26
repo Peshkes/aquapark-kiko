@@ -3,7 +3,6 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: calc(var(--index) * 2);
-    max-width: 1600px;
     width: 100%;
 }
 

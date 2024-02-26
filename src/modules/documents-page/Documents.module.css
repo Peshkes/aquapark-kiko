@@ -1,4 +1,4 @@
 .documentsPage{
-    background-color: black;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.4); /* Тень */
     padding-top:  calc(var(--index) * 2);
 }

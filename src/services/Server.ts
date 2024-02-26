@@ -33,12 +33,16 @@ export class Server {
         if (response.ok) {
             return result;
         } else {
-            throw new Error(`Fetch ${result.status}:${result.message}`);
+            throw new Error(`Fetch ${result.status}:${result.error}`);
         }
     }
 
     static getTickets = async () => {
         return Server.sendRequest('GET', '/guest/tickets');
+    }
+
+    static getSale = async (couponCode: string) => {
+        return Server.sendRequest('GET', '/guest/coupons?code=' + couponCode);
     }
 
     static login = async (loginData: LoginData) => {

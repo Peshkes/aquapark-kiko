@@ -33,7 +33,7 @@
 
 @media screen and (max-width: 768px) {
     .counter {
-        width: 35%;
+        width: 40%;
     }
     .counter button {
         width: calc(var(--index) * 3.5);

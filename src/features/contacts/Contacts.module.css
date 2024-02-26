@@ -3,9 +3,14 @@
     padding-left: 5%;
 }
 
+.contacts h2{
+    left: 0;
+}
+
 .wrapper{
     display: flex;
 }
+
 .leftBlock{
     padding-top: calc(var(--index) * 7);
     padding-right: calc(var(--index) * 1);

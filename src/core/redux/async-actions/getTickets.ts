@@ -8,7 +8,7 @@ export const getTicketsAsyncAction = createAsyncThunk<TicketsSortedByTypeData>(
         try {
             return await Server.getTickets();
         } catch (error) {
-            throw error;
+            console.log(error);
         }
     }
 );

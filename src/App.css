@@ -1,7 +1,13 @@
 :root {
-    --index: calc(1vw + 1vh);
+    --index: min(calc(1vw + 1vh), 27px) ;
     --transition: transform .75s cubic-bezier(.075, .5, 0, 1);
     color: white;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 97, 133, 1) 100%);
 }
 
 h1{
@@ -52,6 +58,7 @@ p, a, label {
 .wrapper {
     padding: 0 5%;
     position: relative;
+    max-width: 1750px;
 }
 
 @media screen and (max-width: 768px) {

@@ -4,7 +4,9 @@ import style from './Contacts.module.css';
 const Contacts = () => {
     return (
         <div className={style.contacts}>
-            <h2>Контакты</h2>
+            <div className={"wrapper"}>
+                <h2>Контакты</h2>
+            </div>
             <div className={style.wrapper}>
                 <div className={style.leftBlock}>
                     <h4>Адреса:</h4>
@@ -24,7 +26,7 @@ const Contacts = () => {
                 </div>
                 <div className={style.rightBlock}>
                     <iframe title={"map"}
-                        src="https://yandex.ru/map-widget/v1/?um=constructor%3A3e63d1b798d8ff68136c6cda62c942a468b64d64e967491a1e143935205e373a&amp;source=constructor">
+                            src="https://yandex.ru/map-widget/v1/?um=constructor%3A3e63d1b798d8ff68136c6cda62c942a468b64d64e967491a1e143935205e373a&amp;source=constructor">
                     </iframe>
                 </div>
             </div>

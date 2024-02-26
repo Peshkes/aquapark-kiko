@@ -11,7 +11,7 @@ const TelegramForm = () => {
 
     const handleSendMessage = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        if (isValidPhone){
+        if (isValidPhone) {
             const botToken = '';
             const chatId = '';
             try {
@@ -43,7 +43,9 @@ const TelegramForm = () => {
 
     return (
         <div className={style.telegramForm}>
-            <h2>Форма связи</h2>
+            <div className={style.headerBlock + " wrapper"}>
+                <h2>Форма связи</h2>
+            </div>
             <div className={"wrapper"}>
                 <div className={style.block}>
                     <div className={style.leftBlock}>
@@ -79,7 +81,7 @@ const TelegramForm = () => {
                                 value={message}
                                 placeholder={"Как заставить бутер падать колбасой в рот, а не вниз?"}
                                 rows={3} // Вы можете установить желаемое количество строк
-                                style={{ resize: 'none' }}
+                                style={{resize: 'none'}}
                                 onChange={(e) => setMessage(e.target.value)}
                             />
 

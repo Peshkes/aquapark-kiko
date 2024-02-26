@@ -1,7 +1,7 @@
 .mainPage {
-
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.4); /* Тень */
 }
 
 .underWaterBlock {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 97, 133, 1) 100%);
+
 }

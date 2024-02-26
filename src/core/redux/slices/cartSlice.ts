@@ -1,5 +1,6 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {CartItem, StateOfCart, Ticket} from "shared/types";
+import {getSaleAsyncAction} from "core/redux/async-actions/getSale";
 
 const initialState: StateOfCart = {
     cart: [],
@@ -15,7 +16,7 @@ const recalculatePricesWith = (
     return {
         ...state,
         preliminaryPrice: state.preliminaryPrice + newSum,
-        totalPrice: state.preliminaryPrice + newSum,
+        totalPrice: (state.preliminaryPrice + newSum) / 100 * (100 - state.sale),
     };
 };
 
@@ -72,8 +73,20 @@ const cartSlice = createSlice({
                 }
             }
             return state;
-        },
+        }
     },
+    extraReducers: (builder) => {
+        builder
+            .addCase(
+                getSaleAsyncAction.fulfilled,
+                (state, action) => {
+                    if (action.payload > 0){
+                        const newState = { ...state, sale: action.payload };
+                        return recalculatePricesWith(newState, 0);
+                    }
+                }
+            );
+    }
 });
 
 export const {addToCart, changeCountOfItemTo, removeFromCart} =

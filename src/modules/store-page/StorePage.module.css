@@ -1,6 +1,6 @@
 .storePage{
-    background-color: black;
     padding-top:  calc(var(--index) * 2);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.4); /* Тень */
 }
 .calculateBlock{
     display: flex;
@@ -34,9 +34,6 @@
 .onlyOne{
     width: 100%;
 }
-.right input{
-    /*min-width: min-content;*/
-}
 .preliminaryPrice{
     width: calc(var(--index) * 6);
 }
@@ -45,4 +42,35 @@
 }
 .sale{
     width: calc(var(--index) * 4);
+}
+
+@media screen and (max-width: 768px) {
+    .backButton{
+        position: fixed;
+        top: calc(var(--index) * 2);
+    }
+    .right{
+        position: fixed;
+        bottom: calc(0dvh + (var(--index) * 2));
+        justify-content: space-between;
+        width: 90%;
+    }
+    .right input{
+        font-size: calc(var(--index) * 1.1);
+    }
+    .preliminaryPrice{
+        width: calc(var(--index) * 8);
+    }
+    .totalPrice{
+        width: calc(var(--index) * 8);
+    }
+    .sale{
+        width: calc(var(--index) * 5);
+    }
+    .left{
+        width: 100%;
+    }
+    .left input{
+        width: 100%;
+    }
 }
