@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './Photos.module.css';
 // @ts-ignore
-import testImage from 'assets/photo-gallery/test-photo.webp';
+import testImage from 'assets/photo-gallery/115.webp';
 
 const images = [
     {image: testImage, title: "test"},

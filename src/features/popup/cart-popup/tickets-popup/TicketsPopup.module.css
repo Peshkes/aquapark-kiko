@@ -1,0 +1,107 @@
+.listContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.scrollableList {
+    max-height: 32vh;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+.listItem {
+    display: contents;
+}
+
+.listItem span {
+    padding: 5px;
+    border-bottom: 1px solid #ffffff;
+}
+
+.bottomListItem {
+    display: contents;
+}
+
+.totalPrice {
+    border-top: 1px solid #ffffff;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.totalPriceText {
+    text-align: right;
+}
+
+.bottom {
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bottom > div:first-child {
+    width: 70%;
+}
+
+.buttonBlock {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.checkboxContainer {
+    display: flex;
+    align-items: center;
+}
+
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+}
+
+.checkbox {
+    appearance: none;
+    background-color: transparent;
+    margin: 0 10px 0 0;
+    font: inherit;
+    color: currentColor;
+    width: 25px;
+    height: 25px;
+    border: 1px solid white;
+    border-radius: 0.15em;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.checkbox::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    transform: scale(0);
+    transition: transform 120ms ease-in-out;
+    box-shadow: inset 1em 1em white;
+    background-color: CanvasText;
+    border-radius: 3px;
+}
+
+.checkbox:checked::before {
+    transform: scale(1);
+}
+
+.disclaimer {
+    margin-top: 10px;
+    font-size: calc(var(--index) * 0.6);
+}
+
+@media screen and (max-width: 1125px) {
+    .scrollableList span {
+        font-size: var(--index);
+    }
+    .disclaimer {
+        font-size: calc(var(--index) * 0.8);
+    }
+}

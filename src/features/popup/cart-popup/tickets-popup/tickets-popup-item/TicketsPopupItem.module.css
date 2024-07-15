@@ -1,0 +1,9 @@
+.listItem {
+    display: contents;
+}
+
+.listItem span {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}

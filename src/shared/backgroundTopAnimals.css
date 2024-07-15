@@ -1,0 +1,48 @@
+.backgroundAnimal{
+    position: absolute;
+    z-index: 1;
+}
+
+#whales{
+    bottom: var(--index);
+    right: Calc(var(--index) * 2);
+    width: 40%;
+}
+
+#manyFishes{
+    left: 17%;
+    width: 20%;
+    transform: translateY(65%);
+    bottom: 0;
+}
+
+#snake{
+    width: 10%;
+    left: Calc(var(--index) * 5);
+    bottom: Calc(var(--index) * 12);
+}
+
+@media screen and (max-width: 1125px){
+    #whales{
+        bottom: 40%;
+        width: 45%;
+    }
+    #manyFishes{
+        width: 30%;
+    }
+    #snake{
+        left: Calc(var(--index) * 3);
+    }
+}
+
+@media screen and (max-width: 820px) {
+    #whales{
+        width: 60%;
+    }
+    #manyFishes{
+        width: 40%;
+    }
+    #snake{
+        bottom: Calc(var(--index) * 5);
+    }
+}

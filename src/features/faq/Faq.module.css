@@ -1,22 +1,12 @@
-.faq{
-
+.faq {
+    
 }
-
-.header{
+.faqBlock{
+    z-index: 10;
     position: relative;
-    padding: calc(var(--index) * 2);
-    padding-left: 3%;
-    background-color: gray;
-    margin-left: -3%;
-    width: min-content;
 }
-
-.header h2{
-    position: relative;
-    left: 0;
-}
-@media screen and (max-width: 768px) {
-    .faq{
+@media screen and (max-width: 1125px) {
+    .faq {
         margin-top: calc(var(--index) * 3);
     }
 }

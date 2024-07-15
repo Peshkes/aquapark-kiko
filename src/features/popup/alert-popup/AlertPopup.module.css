@@ -1,0 +1,15 @@
+.alert {
+    width: 28vw;
+}
+
+@media screen and (max-width: 1125px) {
+    .alert {
+        width: 50vw;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .alert {
+        width: 70vw;
+    }
+}

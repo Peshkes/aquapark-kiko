@@ -1,48 +1,53 @@
-import React, {useState} from 'react';
-import {Ticket} from "shared/types";
-import {useAppDispatch} from "core/redux/redux-hooks";
-import {addToCart, changeCountOfItemTo, removeFromCart} from "core/redux/slices/cartSlice";
-import style from "./CardStoreFillingItem.module.css";
+import React, {useEffect} from 'react';
+import {InstitutionTicket as Ticket} from 'core/redux/types';
+import {useAppDispatch, useAppSelector} from 'core/redux/redux-hooks';
+import {addToCart, changeCountOfItemTo, removeFromCart} from 'core/redux/cart/cartSlice';
+import style from './CardStoreFillingItem.module.css';
+import {useTranslation} from "react-i18next";
 
 type Props = {
     ticket: Ticket;
-}
-const CardStoreFillingItem = ({ticket}: Props) => {
+    type: string
+    institutionId: string | null;
+};
+
+const CardStoreFillingItem = ({ ticket, type, institutionId }: Props) => {
+    const cartItem = useAppSelector(state =>
+        state.cart.cart.find(item => item.ticket.institutionTicketId === ticket.institutionTicketId)
+    );
+    const count = cartItem ? cartItem.count : 0;
     const dispatch = useAppDispatch();
-    const [count, setCount] = useState(0);
+    const { t } = useTranslation();
     const hours = ticket.time / 60;
 
-    function handleIncrement() {
-        setCount(prevCount => {
-            const newCount = prevCount + 1;
-            if (prevCount === 0) {
-                dispatch(addToCart({ ticket: ticket, count: 1 }));
-            } else {
-                dispatch(changeCountOfItemTo({ ticket: ticket, count: newCount }));
-            }
-            return newCount;
-        });
-    }
+    useEffect(() => {
+        if (count === 0) {
+            dispatch(removeFromCart({ ticket }));
+        } else {
+            dispatch(changeCountOfItemTo({ ticket, count }));
+        }
+    }, [count, dispatch, ticket]);
 
-    function handleDecrement() {
-        setCount(prevCount => {
-            if (prevCount > 0) {
-                const newCount = prevCount - 1;
-                if (newCount === 0) {
-                    dispatch(removeFromCart({ ticket: ticket }));
-                } else {
-                    dispatch(changeCountOfItemTo({ ticket: ticket, count: newCount }));
-                }
-                return newCount;
-            }
-            return prevCount;
-        });
-    }
+    const handleIncrement = () => {
+        if (count === 0) {
+            dispatch(addToCart({ cartItem: {ticket, count: 1, type}, institutionId: institutionId || '' }));
+        } else {
+            dispatch(changeCountOfItemTo({ ticket, count: count + 1 }));
+        }
+    };
+
+    const handleDecrement = () => {
+        if (count > 1) {
+            dispatch(changeCountOfItemTo({ ticket, count: count - 1 }));
+        } else {
+            dispatch(removeFromCart({ ticket }));
+        }
+    };
 
     return (
         <div className={style.item}>
-            <p className={style.hours}>{hours === 1 ? hours + " час" : hours >= 7 ? "День" : hours + " часов"}</p>
-            <p>{ticket.price + "р."}</p>
+            <p className={style.hours}>{hours === 1 ? hours + " " + t("storePage.times.hour") : hours >= 7 ? t("storePage.times.day") : hours + " " + t("storePage.times.hours")}</p>
+            <p>{ticket.price + t("storePage.rub")}</p>
             <div className={style.counter}>
                 <button onClick={handleDecrement}>-</button>
                 <p>{count}</p>

@@ -1,0 +1,29 @@
+.container {
+    padding-top: Calc(var(--index) * 2 + 200px );
+    padding-bottom: Calc(var(--index) * 2 );
+    padding-left: Calc(var(--index) * 8 );
+    position: relative;
+    z-index: 2;
+}
+
+.text {
+    text-align: right;
+}
+.middle{
+    margin: Calc(var(--index) * 3) 0;
+}
+@media screen and (max-width: 1225px){
+    .container {
+        padding-top: Calc(var(--index) + 200px );
+        padding-bottom: var(--index);
+        padding-left: Calc(var(--index) * 3 );
+    }
+}
+@media screen and (max-width: 1125px){
+    .container {
+        padding: Calc(var(--index) * 2 + 50px) Calc(var(--index) * 2) Calc(var(--index) * 2) 0;
+    }
+    .text {
+        text-align: left;
+    }
+}

@@ -1,15 +1,11 @@
 .footer{
-    margin-top: calc(var(--index) * 3);
+    width: 100%;
     display: flex;
     justify-content: center;
-    padding-top: calc(var(--index) * 10);
-    padding-bottom: calc(var(--index) * 9);
-    background-image: url("assets/footer/footer.webp");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: bottom;
+    padding-top: calc(var(--index) * 6);
+    padding-bottom: calc(var(--index) * 6);
+    background-color: #011B23;;
 }
-
 .informationBlock{
     width: 50%;
     min-width: 500px;
@@ -21,20 +17,40 @@
 .informationBlock div a{
     text-decoration: none;
     color: white;
-    padding: 0 calc(var(--index) * 1);
+    padding: var(--index);
 }
 
 .links{
-    margin-bottom: calc(var(--index) * 1);
+    margin-bottom: var(--index);
+    display: flex;
+    align-items: center;
+}
+
+
+.links select{
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    margin-left: 5px;
+    margin-top: Calc(var(--index) * 0.1);
 }
 
 .social a svg{
     width: calc(var(--index) * 2);
     aspect-ratio: 1;
 }
+
+.language{
+    display: flex;
+    align-items: center;
+}
 @media screen and (max-width: 768px) {
     .informationBlock{
         width: 80%;
         min-width: auto;
+    }
+    .links{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }

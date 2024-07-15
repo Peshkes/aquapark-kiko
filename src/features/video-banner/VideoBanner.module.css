@@ -1,26 +1,40 @@
 .videoBanner {
-    padding: calc(var(--index) * 6) 0;
     position: relative;
-    display: flex;
-    justify-content: center;
+    margin-top: calc(var(--index) * 6);
+    z-index: 2;
 }
 
 .animatedWhale {
-    padding: calc(var(--index) * 3) calc(var(--index) * 7);
-    background-color: gray;
+    position: relative;
+    width: 100%;
+    border-radius: 30px;
+    border: white 2px solid;
+    overflow: hidden;
 }
 
 .video {
-    width: calc(var(--index) * 25);
-    height: calc(var(--index) * 16);
+    width: 100%;
+    aspect-ratio: 1.5;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1489px) {
     .video {
-        width: calc(var(--index) * 20);
-        height: calc(var(--index) * 11);
+        aspect-ratio: 1.7;
     }
-    .animatedWhale {
-        padding: calc(var(--index) * 2) calc(var(--index) * 3.8);
+}
+@media screen and (max-width: 1125px) {
+    .video {
+        width: 100%;
+        aspect-ratio: 1.6;
+    }
+}
+@media screen and (max-width: 876px){
+    .video {
+        aspect-ratio: 1.7;
+    }
+}
+@media screen and (max-width: 585px) {
+    .video {
+        aspect-ratio: 1.5;
     }
 }

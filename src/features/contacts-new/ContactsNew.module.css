@@ -1,0 +1,72 @@
+.container {
+    display: flex;
+    z-index: 10;
+    position: relative;
+}
+
+.container a {
+    color: white;
+    text-decoration: none;
+}
+
+.right {
+    flex: 1.8;
+    height: Calc(var(--index) * 20); /* Высота блоков */
+    padding-left: 20px;
+}
+
+.right iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    border: 2px white solid;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.top {
+    flex: 1.5;
+    margin-bottom: 20px; /* Отступ между верхним и нижним правыми блоками */
+    border: 2px white solid;
+    border-radius: 30px;
+    padding: 20px;
+}
+
+.bottom {
+    flex: 2; /* Нижний правый блок занимает половину высоты родительского блока */
+    border: 2px white solid;
+    border-radius: 30px;
+    padding: 20px;
+}
+@media screen and (max-width: 1300px) {
+    .container {
+        flex-direction: column;
+    }
+    .right {
+        padding-left: 0;
+    }
+    .left {
+        flex-direction: column-reverse;
+    }
+    .bottom{
+        margin-bottom: 20px;
+    }
+}
+@media screen and (max-width: 1125px) {
+    .top, .bottom{
+        padding: 5%;
+    }
+    .container a{
+        word-wrap: break-word;
+    }
+    .right{
+        height: Calc(var(--index) * 20);
+        flex: auto;
+    }
+    .contacts{
+        margin-top: Calc(var(--index) * 6);
+    }
+}

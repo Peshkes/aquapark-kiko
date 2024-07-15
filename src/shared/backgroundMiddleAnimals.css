@@ -1,0 +1,145 @@
+#jelly{
+    width: 20%;
+    right: 20%;
+    top: Calc(var(--index) * 28);
+}
+
+#longfish{
+    width: 5%;
+    right: 5%;
+    top: Calc(var(--index) * 15);
+}
+
+#octo{
+    width: 30%;
+    bottom: 0;
+    transform: translateY(45%);
+    right: 10%;
+}
+
+#turtles{
+    width: 25%;
+    transform: translateY(-25%);
+}
+
+#blackFishes{
+    transform: translate(-50%,-10%);
+}
+
+#blackWhale{
+    width: 27%;
+    transform: translateY(-30%);
+}
+
+#flat{
+    width: 20%;
+    transform: translate(20%, -40%);
+}
+@media screen and (max-width: 1770px) {
+    #jelly{
+        width: 30%;
+        right: 15%;
+    }
+    #flat{
+        transform: translateY(0);
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    #longfish{
+        top: Calc(var(--index) * 22);
+    }
+    #turtles{
+        transform: translateY(0);
+    }
+}
+
+@media screen and (max-width: 1350px){
+    #jelly{
+        top: Calc(var(--index) * 35);
+    }
+    #blackFishes {
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media screen and (max-width: 1175px){
+    #jelly{
+        width: 35%;
+        top: Calc(var(--index) * 38);
+        right: 10%;
+    }
+}
+
+@media screen and (max-width: 1125px) {
+    #longfish {
+        width: 10%;
+        top: Calc(var(--index) * 15);
+    }
+    #jelly {
+        width: 45%;
+        top: Calc(var(--index) * 29);
+    }
+    #octo {
+        width: 50%;
+    }
+    #turtles {
+        width: 40%;
+        transform: translateY(-160%);
+    }
+    #blackFishes {
+        transform: translate(-50%, 0);
+    }
+    #blackWhale {
+        width: 20%;
+        transform: translateY(-200%);
+        right: 10%;
+    }
+    #flat{
+        transform: translate(30%, 0);
+        bottom: 46%;
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 1025px) {
+    #longfish{
+        top: Calc(var(--index) * 26);
+    }
+    #jelly {
+        top: auto;
+        width: 70%;
+        bottom: 59%;
+    }
+}
+@media screen and (max-width: 645px) {
+
+    #longfish{
+        top: Calc(var(--index) * 35);
+        width: 25%;
+    }
+
+    #jelly {
+        top: auto;
+        width: 70%;
+        bottom: 54%;
+    }
+}
+
+@media screen and (max-width: 585px) {
+    #jelly {
+        bottom: 57%;
+    }
+    #turtles{
+        transform: translateY(-230%);
+        width: 50%;
+    }
+    #blackFishes {
+        transform: translate(0, -40%);
+        width: 70%;
+    }
+
+    #blackWhale {
+        transform: translateY(-450%);
+    }
+}

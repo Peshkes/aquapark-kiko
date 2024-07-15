@@ -1,0 +1,5 @@
+.followImage {
+    position: absolute;
+    display: block;
+    z-index: 7;
+}

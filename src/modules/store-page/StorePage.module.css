@@ -1,18 +1,38 @@
 .storePage{
-    padding-top:  calc(var(--index) * 2);
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.4); /* Тень */
+    background-color: #142F3A;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.storePage h2{
+    margin-top: Calc(var(--index) * 3);
+}
+
+.storePage > div:first-child{
+    height: 100%;
+    flex: 1;
+    width: 100%;
+    padding: 5% 40px;
+    background-image: url("assets/backs/store.webp");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100%;
 }
 .calculateBlock{
     display: flex;
     width: 100%;
     margin-top: calc(var(--index) * 2);
 }
-.calculateBlock input{
+.calculateBlock input, .calculateBlock div div{
     font-size: calc(var(--index) * 0.8);
     border: 1px solid white;
     padding: calc(var(--index) * 0.3) calc(var(--index) * 1);
     border-radius: 100px;
     margin-right: calc(var(--index) * 0.8);
+    width: max-content;
 }
 .left{
     display: flex;
@@ -31,11 +51,14 @@
     justify-content: right;
     width: 50%;
 }
+.right input{
+
+}
 .onlyOne{
     width: 100%;
 }
 .preliminaryPrice{
-    width: calc(var(--index) * 6);
+    text-decoration-line: line-through;
 }
 .totalPrice{
     width: calc(var(--index) * 6);
@@ -45,24 +68,31 @@
 }
 
 @media screen and (max-width: 768px) {
-    .backButton{
-        position: fixed;
-        top: calc(var(--index) * 2);
+    .storePage{
+        padding-top: Calc(var(--index) * 3);
     }
     .right{
         position: fixed;
-        bottom: calc(0dvh + (var(--index) * 2));
+        bottom: 0;
+        left: 0;
+        padding: Calc(var(--index) * 1.5) 40px;;
         justify-content: space-between;
-        width: 90%;
+        width: 100%;
+        background-color: rgba(20, 47, 58, 0.1);
+        backdrop-filter: blur(10px);
+        border-top: 1px white solid;
     }
-    .right input{
+    .right div{
+        text-align: center;
+    }
+    .right div span{
         font-size: calc(var(--index) * 1.1);
     }
     .preliminaryPrice{
         width: calc(var(--index) * 8);
     }
     .totalPrice{
-        width: calc(var(--index) * 8);
+        width: 100%;
     }
     .sale{
         width: calc(var(--index) * 5);

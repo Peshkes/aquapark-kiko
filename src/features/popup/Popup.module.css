@@ -1,0 +1,105 @@
+/* Popup.module.css */
+.popupOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 0.3s ease-in-out;
+}
+
+.popupOverlay.show {
+    visibility: visible;
+    animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.popupContent {
+    border: white 1px solid;
+    padding: 40px;
+    border-radius: 30px;
+    position: relative;
+    min-width: 300px;
+    transform: scale(0.7);
+    animation: scaleUp 0.3s forwards;
+}
+
+.popupContent.show {
+    animation: scaleUp 0.3s forwards;
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0.7);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.backButton {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.contentWrapper {
+
+}
+
+.content {
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.contentVisible {
+    opacity: 1;
+    transform: translateX(0);
+    z-index: 1;
+    display: block;
+}
+
+.contentHidden {
+    opacity: 0;
+    transform: translateX(-100%);
+    z-index: 0;
+    display: none;
+}

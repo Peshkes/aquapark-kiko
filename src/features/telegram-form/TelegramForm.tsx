@@ -1,7 +1,10 @@
 import React, {FormEvent, useState} from 'react';
 import style from './TelegramForm.module.css'
+import {useTranslation} from "react-i18next";
 
 const TelegramForm = () => {
+    const {t} = useTranslation();
+
     const [phone, setPhone] = useState('+7');
     const [isValidPhone, setIsValidPhone] = useState(true);
     const phoneNumberPattern = /^\+7\d{10}$/;
@@ -12,29 +15,28 @@ const TelegramForm = () => {
     const handleSendMessage = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (isValidPhone) {
-            const botToken = '';
-            const chatId = '';
             try {
+                console.log()
                 await fetch(
-                    `https://api.telegram.org/bot${botToken}/sendMessage`,
+                    `https://api.telegram.org/bot${process.env.REACT_APP_BOT_TOKEN}/sendMessage`,
                     {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
                         },
                         body: JSON.stringify({
-                            chat_id: chatId,
-                            text: `Телефон: ${phone}\nИмя: ${name}\nСообщение: ${message}`,
+                            chat_id: process.env.REACT_APP_CHAT_ID,
+                            text: `${t('telegramForm.phone')}: ${phone}\n${t('telegramForm.name')}: ${name}\n${t('telegramForm.message')}: ${message}`,
                         }),
                     }
                 );
-                alert('Сообщение отправлено успешно!')
+                alert(t('telegramForm.itsOk'));
                 setPhone('+7');
                 setName('');
                 setMessage('');
                 setIsValidPhone(true);
             } catch (error) {
-                alert('Ошибка:' + error);
+                alert(t('telegramForm.error') + ':' + error);
             }
         } else {
             alert('Введите корректный номер телефона');
@@ -43,51 +45,46 @@ const TelegramForm = () => {
 
     return (
         <div className={style.telegramForm}>
-            <div className={style.headerBlock + " wrapper"}>
-                <h2>Форма связи</h2>
-            </div>
-            <div className={"wrapper"}>
-                <div className={style.block}>
-                    <div className={style.leftBlock}>
-                        <h4>Если у вас есть какие-то жалобы, предложения, может, просто хотите что-то нам сказать, для
-                            вас есть эта форма.</h4>
-                    </div>
-                    <div className={style.rightBlock}>
-                        <form onSubmit={handleSendMessage}>
-                            <label>Телефон:</label>
-                            <input
-                                required={true}
-                                type="string"
-                                value={phone}
-                                placeholder={"+79111112000"}
-                                onChange={(e) => setPhone(e.target.value)}
-                                onBlur={() => setIsValidPhone(phoneNumberPattern.test(phone))}
-                            />
-                            {!isValidPhone && (
-                                <p style={{color: 'red'}}>Введите корректный номер телефона</p>
-                            )}
-                            <label>Имя:</label>
-                            <input
-                                required={true}
-                                type="text"
-                                value={name}
-                                placeholder={"Кот Матроскин"}
-                                onChange={(e) => setName(e.target.value)}
-                            />
+            <h2>{t('telegramForm.title')}</h2>
+            <div className={style.block + " spawn-opacity-animation"}>
+                <div className={style.leftBlock}>
+                    <h4>{t('telegramForm.description')}</h4>
+                </div>
+                <div className={style.rightBlock}>
+                    <form onSubmit={handleSendMessage}>
+                        <label>{t('telegramForm.phone')}:</label>
+                        <input
+                            required={true}
+                            type="string"
+                            value={phone}
+                            placeholder={"+79111112000"}
+                            onChange={(e) => setPhone(e.target.value)}
+                            onBlur={() => setIsValidPhone(phoneNumberPattern.test(phone))}
+                        />
+                        {!isValidPhone && (
+                            <p style={{color: 'red'}}>{t('telegramForm.errorText')}</p>
+                        )}
+                        <label>{t('telegramForm.name')}:</label>
+                        <input
+                            required={true}
+                            type="text"
+                            value={name}
+                            placeholder={t('telegramForm.namePlaceholder')}
+                            onChange={(e) => setName(e.target.value)}
+                        />
 
-                            <label>Сообщение:</label>
-                            <textarea
-                                required={true}
-                                value={message}
-                                placeholder={"Как заставить бутер падать колбасой в рот, а не вниз?"}
-                                rows={3} // Вы можете установить желаемое количество строк
-                                style={{resize: 'none'}}
-                                onChange={(e) => setMessage(e.target.value)}
-                            />
+                        <label>{t('telegramForm.message')}:</label>
+                        <textarea
+                            required={true}
+                            value={message}
+                            placeholder={t('telegramForm.messagePlaceholder')}
+                            rows={3}
+                            style={{resize: 'none'}}
+                            onChange={(e) => setMessage(e.target.value)}
+                        />
 
-                            <button type="submit">Отправить</button>
-                        </form>
-                    </div>
+                        <button type="submit">{t('telegramForm.submit')}</button>
+                    </form>
                 </div>
             </div>
         </div>

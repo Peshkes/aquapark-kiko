@@ -1,8 +1,8 @@
 .cardWrapper{
     width: 100%;
     overflow: hidden;
-    background-color: #006ACE;
-    border-radius: 50px;
+    border-radius: 30px;
+    border: white 1px solid;
 }
 
 .head img{
@@ -17,4 +17,11 @@
 .body a{
     color: white;
     text-decoration: none;
+}
+
+@media screen and (max-width: 875px) {
+    .body{
+        padding: 0 30px 30px;
+    }
+
 }

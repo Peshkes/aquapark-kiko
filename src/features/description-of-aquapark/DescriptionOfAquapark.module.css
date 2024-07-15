@@ -1,56 +1,67 @@
 .descriptionOfAquapark {
     position: relative;
-    padding-top: calc(var(--index) * 5);
-    align-items: end;
-}
-
-.descriptionOfAquapark > div{
-    display: flex;
-    justify-content: right;
+    z-index: 2;
 }
 
 .textBlock {
-    padding: calc(var(--index));
-    padding-top: calc(var(--index) * 9);
-    min-width: 70%;
-    width: calc(var(--index) * 35);
-    background-color: gray;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
 }
 
 .container {
     display: flex;
-    padding-bottom: calc(var(--index));
+    padding: calc(var(--index));
+    border-radius: 30px;
+    border: white solid 2px;
+    margin-bottom: 20px;
+    align-items: center;
 }
 
 .leftTextBlock {
-    padding-right: 5%;
     width: 30%;
     min-width: min-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .rightTextBlock {
     width: 70%;
 }
-@media screen and (max-width: 768px) {
+
+.vl{
+    width: 2px;
+    background-color: white;
+    border-radius: 1px;
+    margin: 0 var(--index);
+    display: inline-block;
+    height: Calc(var(--index) * 4);
+}
+@media screen and (max-width: 1025px) {
     .container {
+        padding: Calc(var(--index) * 2);
         flex-direction: column;
-        padding-bottom: 0;
+        align-items: normal;
     }
 
     .textBlock {
-        padding: calc(var(--index) * 2);
-        padding-top: calc(var(--index) * 9);
         width: 100%;
         min-width: auto;
         background-color: inherit;
     }
 
-    .leftTextBlock {
-        width: 60%;
-        margin: calc(var(--index) * 2) 0;
+    .leftTextBlock, .rightTextBlock{
+        width: 100%;
+        padding: 0;
+        justify-content: left;
     }
 
-    .rightTextBlock {
-        width: 100%;
+    .vl{
+        width:  Calc(var(--index) * 7);
+        height: 2px;
+        margin: var(--index) 0;
     }
 }
+

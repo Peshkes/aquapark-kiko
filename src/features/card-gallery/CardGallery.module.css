@@ -6,10 +6,17 @@
     width: 100%;
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1125px) {
     .gallery{
         grid-template-columns: repeat(2, 1fr);
     }
+}
+
+@media screen and (max-width: 980px) {
+    .gallery p{
+        font-size: calc(var(--index) * 1) !important;
+    }
+
 }
 
 @media screen and (max-width: 768px) {

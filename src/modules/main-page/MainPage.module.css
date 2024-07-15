@@ -1,7 +1,82 @@
 .mainPage {
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.4); /* Тень */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .underWaterBlock {
+    width: 100%;
+    position: relative;
+    z-index: 0;
+}
+.top{
+    background-color: #59ADAC;
+}
 
+.middle{
+    background-color: #2A5F71;
+}
+
+.bottom{
+    background-color: #142F3A;
+    position: relative;
+}
+.bottom .rightSide{
+
+}
+.bottom .leftSide{
+   margin-top: Calc(var(--index) * 10);
+}
+.block{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding: 5% 40px;
+}
+.leftSide, .rightSide {
+    width: 50%;
+}
+.leftSide{
+    padding-right: Calc(var(--index) * 3.4 + 20px)
+}
+.rightSide{
+    padding-left: 60px;
+}
+.middle .block, .bottom .block, .top .block{
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100%;
+}
+.top .block {
+    background-image: url("assets/backs/topper_min.webp");
+}
+.middle .block{
+    background-image: url("assets/backs/middle_min.webp");
+}
+.bottom .block{
+    background-image: url("assets/backs/footer_min.webp");
+}
+@media screen and (max-width: 1125px) {
+    .block {
+        flex-direction: column-reverse;
+        padding: 5% 40px 5% Calc(var(--index) * 4 + 100px);
+    }
+    .leftSide, .rightSide {
+        width: 100%;
+        padding: 0; /* Убрать отступы для мобильных устройств */
+        margin-top: 20px; /* Добавить верхний отступ между блоками */
+    }
+    .middle .leftSide {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .bottom {
+        order: 3; /* Задаем порядок элемента внутри блока .middle */
+    }
+}
+@media screen and (max-width: 585px) {
+    .block {
+        padding: 5% 40px;
+    }
 }

@@ -1,5 +1,22 @@
+@font-face {
+    font-family: "karlson";
+    src: url("assets/fonts/karlson_25893.svg");
+    src: url("assets/fonts/karlson_25893.ttf");
+}
+
+@font-face {
+    font-family: "soyuz";
+    src: url("assets/fonts/soyuz.otf");
+}
+
+@font-face {
+    font-family: "roboto";
+    src: url("assets/fonts/roboto.ttf");
+}
+
 :root {
-    --index: min(calc(1vw + 1vh), 27px) ;
+    --rem: 1rem / 16 - 1px;
+    --index: min(calc((1vw + 1vh + var(--rem)) ), 27px) ;
     --transition: transform .75s cubic-bezier(.075, .5, 0, 1);
     color: white;
 }
@@ -7,38 +24,51 @@
 body{
     display: flex;
     justify-content: center;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 97, 133, 1) 100%);
+}
+
+.app{
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.root{
+    width: 100vw;
 }
 
 h1{
-    font-family: Karlson, serif;
+    font-family: Karlson, karlson, "karlson", serif;
+}
+
+h1 span{
+    font-family: Karlson, karlson, "karlson", serif;
 }
 
 h2 {
-    font-family: -apple-system, serif;
-    font-size: calc(var(--index) * 3.5);
+    font-family: "Soyuz Grotesk", soyuz, serif;
+    font-size: calc(var(--index) * 3);
     line-height: calc(var(--index) * 4);
-    position: absolute;
-    left: 5%;
+    margin-bottom: var(--index);
+    z-index: 2;
 }
 
 h4, input, textarea {
-    font-family: -apple-system, serif;
-    font-size: calc(var(--index) * 1.2);
+    font-family: Roboto, roboto, serif;
+    font-size: calc(var(--index) * 1);
     color: white;
     background-color: rgba(255, 255, 255, 0);
     border: none;
 }
 
 input::placeholder, textarea::placeholder {
-    font-family: -apple-system, serif;
-    color: white;
+    font-family: Roboto, roboto, serif;
+    color: #b4b4b4;
 }
 
-button {
-    font-family: -apple-system, serif;
+button, select{
+    font-family: Roboto, roboto, serif;
     font-size: calc(var(--index) * 0.8);
-    background-color: rgba(255, 255, 255, 0);
+    background-color: transparent;
     border: 1px solid white;
     padding: calc(var(--index) * 0.3) calc(var(--index) * 1);
     border-radius: 100px;
@@ -46,27 +76,61 @@ button {
     cursor: pointer;
 }
 
+button:hover{
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+button:active{
+    background-color: rgba(255, 255, 255, 0.40);
+}
+
+button:disabled{
+    border: 1px solid #737373;
+    color: #737373;
+    cursor: not-allowed;
+}
 a {
     cursor: pointer;
 }
 
-p, a, label {
-    font-family: -apple-system, serif;
-    font-size: calc(var(--index) * 0.8);
+p, a, label, select, span{
+    font-family: Roboto, roboto, serif;
+    font-size: calc(var(--index) * 0.7);
 }
 
 .wrapper {
-    padding: 0 5%;
     position: relative;
-    max-width: 1750px;
+    max-width: 2560px;
+    width: 100%;
 }
 
-@media screen and (max-width: 768px) {
-    p, a, label {
+.spawn-opacity-animation{
+    opacity: 0;
+}
+
+.spawn-opacity-animation.shown{
+    opacity: 1;
+    transition: opacity 1.5s;
+}
+.spawn-opacity-animation:nth-of-type(2).shown{
+    transition-delay: 0.5s;
+}
+.spawn-opacity-animation:nth-of-type(3).shown{
+    transition-delay: 1s;
+}
+.spawn-opacity-animation:nth-of-type(4).shown{
+    transition-delay: 1.5s;
+}
+.spawn-opacity-animation:nth-of-type(5).shown{
+    transition-delay: 1.5s;
+}
+
+@media screen and (max-width: 1125px) {
+    p, a, label , span{
         font-size: calc(var(--index) * 1.2);
     }
 
-    button {
+    button, select {
         font-size: calc(var(--index) * 1.2);
     }
 

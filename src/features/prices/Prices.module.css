@@ -1,69 +1,168 @@
-.prices {
-    margin-top: calc(var(--index) * 5);
-    padding-bottom: calc(var(--index) * 12);
-    background-color: gray;
-}
 
-.prices > div {
-    display: flex;
-}
-
-.prices div div a, .prices p {
+.prices a, .prices p {
     display: block;
     text-decoration: none;
     font-size: calc(var(--index) * 1.5);
     font-weight: bold;
     color: white;
-    margin-top: calc(var(--index) * 5);
-}
-
-.prices p {
-    text-align: center;
-    position: relative;
-    left: -23%;
 }
 
 .prices a {
     position: relative;
-    left: 30%;
     text-align: left;
 }
 
-.prices h2 {
-    left: 0;
+.prices {
+    margin-top: calc(var(--index) * 5);
+    position: relative;
+    z-index: 2;
+}
+
+.leftSide, .rightSide {
+    border-radius: 30px;
+    border: white 2px solid;
 }
 
 .leftSide {
     position: relative;
-    width: 60%;
+    width: 100%;
+    padding: calc(var(--index) * 2);
 }
+
+.leftSide a{
+    margin-bottom: var(--index);
+}
+
+.leftSide a:last-child{
+    margin-bottom: 0;
+}
+
 
 .rightSide {
     position: relative;
-    width: 40%;
+    width: 100%;
 }
 
-@media screen and (max-width: 768px) {
-    .prices {
-        margin-top: calc(var(--index) * 5);
-        padding: calc(var(--index) * 3) 0 calc(var(--index) * 4);
+.rightSide {
+    display: flex;
+    flex-direction: row;
+    padding: calc(var(--index) * 2);
+    align-items: center;
+    margin-bottom: Calc(var(--index) * 3);
+}
+
+.vl {
+    width: 2px;
+    background-color: white;
+    border-radius: 1px;
+    margin: 0 calc(var(--index) * 1);
+    display: inline-block;
+    height: Calc(var(--index) * 4);
+}
+
+.rightSide :first-child {
+    text-align: right;
+    position: relative;
+    min-width: calc(var(--index) * 10);
+}
+
+.rightSide :last-child {
+    text-align: left;
+    position: relative;
+    font-size: calc(var(--index) * 0.8);
+}
+
+.rightSide p {
+    width: 50%;
+}
+
+.rightSide span {
+    font-weight: normal;
+    font-size: calc(var(--index) * 0.5) !important;
+    line-height: calc(var(--index) * 0.4) !important;
+}
+
+.leftSide p {
+    font-size: calc(var(--index) * 0.8);
+}
+
+.vl2 {
+    height: 2px;
+    background-color: white;
+    border-radius: 1px;
+    margin: calc(var(--index) * 1) 0;
+    display: inline-block;
+    width: Calc(var(--index) * 4);
+}
+@media screen and (max-width: 1350px) {
+    .rightSide {
+        flex-direction: column;
+        align-items: normal;
     }
 
-    .prices > div {
-        flex-direction: column-reverse;
-    }
-
-    .prices p, .prices a {
+    .rightSide :first-child {
         text-align: left;
-        left: calc(var(--index) * 2);
-        width: calc( 100% - var(--index) * 2);;
     }
 
-    .leftSide, .rightSide {
+    .rightSide :last-child {
         width: 100%;
     }
 
-    .leftSide{
-        margin-top: calc(var(--index) * 2);
+    .vl {
+        width: Calc(var(--index) * 4);
+        height: 2px;
+        margin: var(--index) 0;
+    }
+}
+
+@media screen and (max-width: 1125px) {
+    .prices {
+        margin-top: calc(var(--index) * 6);
+        padding: calc(var(--index) * 3) 0 calc(var(--index) * 4);
+    }
+
+    .rightSide {
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .rightSide {
+        flex-direction: row;
+    }
+
+    .vl {
+        width: 2px;
+        height: Calc(var(--index) * 4);
+        margin: 0 var(--index);
+    }
+}
+@media screen and (max-width: 860px){
+    .rightSide {
+        flex-direction: column;
+        align-items: normal;
+        width: max-content;
+    }
+
+    .rightSide :first-child {
+        text-align: left;
+    }
+    .vl {
+        width: Calc(var(--index) * 4);
+        height: 2px;
+        margin: var(--index) 0;
+    }
+}
+
+@media screen and (max-width: 650px){
+    .rightSide {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 585px){
+    .rightSide span {
+        font-size: calc(var(--index) * 0.8) !important;
+        line-height: calc(var(--index) * 0.8) !important;
     }
 }
